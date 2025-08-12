@@ -21,22 +21,26 @@ export default async function HomePage() {
       {/* Hero Section */}
       <div className="container mx-auto px-4 py-16">
         <div className="text-center mb-16">
-          <h1 className="font-serif text-6xl md:text-8xl font-bold text-primary groovy-text mb-6 transform -rotate-1">
+          <h1 className="font-serif text-6xl md:text-8xl font-bold text-primary groovy-text mb-6 transform -rotate-1 animate-on-load animate-bounce-in">
             Circle Up!
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed animate-on-load animate-fade-in-up animate-delay-200">
             Secure church communication with complete privacy protection. Connect with your spiritual family while
             keeping your personal information safe and secure.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button asChild size="lg" className="groovy-button text-lg px-8 py-6">
+            <Button
+              asChild
+              size="lg"
+              className="groovy-button text-lg px-8 py-6 animate-on-load animate-slide-in-left animate-delay-400"
+            >
               <Link href="/auth/signup">Join the Community</Link>
             </Button>
             <Button
               asChild
               variant="outline"
               size="lg"
-              className="text-lg px-8 py-6 border-2 border-primary bg-transparent"
+              className="text-lg px-8 py-6 border-2 border-primary bg-transparent animate-on-load animate-slide-in-right animate-delay-400"
             >
               <Link href="/auth/login">Sign In</Link>
             </Button>
@@ -45,9 +49,9 @@ export default async function HomePage() {
 
         {/* Features Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          <Card className="groovy-card">
+          <Card className="groovy-card animate-on-load animate-fade-in-scale animate-delay-100">
             <CardHeader>
-              <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-4 animate-float">
                 <Shield className="w-6 h-6 text-primary-foreground" />
               </div>
               <CardTitle className="font-serif text-2xl">Privacy First</CardTitle>
@@ -57,9 +61,12 @@ export default async function HomePage() {
             </CardHeader>
           </Card>
 
-          <Card className="groovy-card">
+          <Card className="groovy-card animate-on-load animate-fade-in-scale animate-delay-200">
             <CardHeader>
-              <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mb-4">
+              <div
+                className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mb-4 animate-float"
+                style={{ animationDelay: "0.5s" }}
+              >
                 <Users className="w-6 h-6 text-secondary-foreground" />
               </div>
               <CardTitle className="font-serif text-2xl">Member Directory</CardTitle>
@@ -69,9 +76,12 @@ export default async function HomePage() {
             </CardHeader>
           </Card>
 
-          <Card className="groovy-card">
+          <Card className="groovy-card animate-on-load animate-fade-in-scale animate-delay-300">
             <CardHeader>
-              <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center mb-4">
+              <div
+                className="w-12 h-12 bg-accent rounded-full flex items-center justify-center mb-4 animate-float"
+                style={{ animationDelay: "1s" }}
+              >
                 <MessageCircle className="w-6 h-6 text-accent-foreground" />
               </div>
               <CardTitle className="font-serif text-2xl">Private Mailing Lists</CardTitle>
@@ -81,9 +91,12 @@ export default async function HomePage() {
             </CardHeader>
           </Card>
 
-          <Card className="groovy-card">
+          <Card className="groovy-card animate-on-load animate-fade-in-scale animate-delay-400">
             <CardHeader>
-              <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-4">
+              <div
+                className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-4 animate-float"
+                style={{ animationDelay: "1.5s" }}
+              >
                 <Calendar className="w-6 h-6 text-primary-foreground" />
               </div>
               <CardTitle className="font-serif text-2xl">Shared Calendar</CardTitle>
@@ -93,9 +106,12 @@ export default async function HomePage() {
             </CardHeader>
           </Card>
 
-          <Card className="groovy-card">
+          <Card className="groovy-card animate-on-load animate-fade-in-scale animate-delay-500">
             <CardHeader>
-              <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mb-4">
+              <div
+                className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mb-4 animate-float"
+                style={{ animationDelay: "2s" }}
+              >
                 <Heart className="w-6 h-6 text-secondary-foreground" />
               </div>
               <CardTitle className="font-serif text-2xl">Friends System</CardTitle>
@@ -105,9 +121,12 @@ export default async function HomePage() {
             </CardHeader>
           </Card>
 
-          <Card className="groovy-card">
+          <Card className="groovy-card animate-on-load animate-fade-in-scale animate-delay-600">
             <CardHeader>
-              <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center mb-4">
+              <div
+                className="w-12 h-12 bg-accent rounded-full flex items-center justify-center mb-4 animate-float"
+                style={{ animationDelay: "2.5s" }}
+              >
                 <Sparkles className="w-6 h-6 text-accent-foreground" />
               </div>
               <CardTitle className="font-serif text-2xl">Beautiful Design</CardTitle>
@@ -120,7 +139,7 @@ export default async function HomePage() {
 
         {/* Call to Action */}
         <div className="text-center">
-          <Card className="groovy-card max-w-2xl mx-auto">
+          <Card className="groovy-card max-w-2xl mx-auto animate-on-load animate-fade-in-up animate-delay-300">
             <CardContent className="p-8">
               <h2 className="font-serif text-3xl font-bold text-primary mb-4">Ready to Circle Up?</h2>
               <p className="text-lg text-muted-foreground mb-6">
@@ -134,7 +153,7 @@ export default async function HomePage() {
         </div>
       </div>
 
-      <footer className="border-t border-border bg-card/50 py-8">
+      <footer className="border-t border-border bg-card/50 py-8 animate-on-load animate-fade-in-up animate-delay-500">
         <div className="container mx-auto px-4">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
             <div>
