@@ -3,7 +3,7 @@ import { redirect } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import Link from "next/link"
-import { Heart, Users, Calendar, MessageCircle, Shield, Sparkles } from "lucide-react"
+import { Heart, Users, Calendar, MessageCircle, Shield, Sparkles } from "@/lib/icons"
 
 export default async function HomePage() {
   const supabase = createClient()

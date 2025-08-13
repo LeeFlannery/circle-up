@@ -11,7 +11,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Label } from "@/components/ui/label"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import Link from "next/link"
-import { Loader2, Sparkles } from "lucide-react"
+import { Loader2, Sparkles } from "@/lib/icons"
 
 export default function LoginForm() {
   const [email, setEmail] = useState("")

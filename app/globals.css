@@ -1,78 +1,87 @@
 @import "tailwindcss";
-@import "tw-animate-css";
+
+/* Removed problematic @import "tw-animate-css"; that was breaking the styling */
 
 @custom-variant dark (&:is(.dark *));
 
-/* Updated color scheme to warm oranges, deep teals, and earthy browns */
 :root {
-  --background: oklch(0.98 0.02 85); /* Warm cream */
-  --foreground: oklch(0.25 0.05 45); /* Deep brown */
-  --card: oklch(0.96 0.03 80);
-  --card-foreground: oklch(0.25 0.05 45);
-  --popover: oklch(0.96 0.03 80);
-  --popover-foreground: oklch(0.25 0.05 45);
-  --primary: oklch(0.55 0.15 25); /* Burnt orange */
-  --primary-foreground: oklch(0.98 0.02 85);
-  --secondary: oklch(0.45 0.12 180); /* Deep teal */
-  --secondary-foreground: oklch(0.98 0.02 85);
-  --muted: oklch(0.92 0.03 75);
-  --muted-foreground: oklch(0.45 0.05 50);
-  --accent: oklch(0.75 0.18 65); /* Golden yellow */
-  --accent-foreground: oklch(0.25 0.05 45);
-  --destructive: oklch(0.6 0.2 15); /* Warm red */
-  --destructive-foreground: oklch(0.98 0.02 85);
-  --border: oklch(0.85 0.04 70);
-  --input: oklch(0.94 0.03 75);
-  --ring: oklch(0.55 0.15 25);
-  --chart-1: oklch(0.55 0.15 25);
-  --chart-2: oklch(0.45 0.12 180);
-  --chart-3: oklch(0.75 0.18 65);
-  --chart-4: oklch(0.65 0.16 320);
-  --chart-5: oklch(0.7 0.14 120);
-  --radius: 1rem; /* Increased for more rounded, organic feel */
-  --sidebar: oklch(0.96 0.03 80);
-  --sidebar-foreground: oklch(0.25 0.05 45);
-  --sidebar-primary: oklch(0.55 0.15 25);
-  --sidebar-primary-foreground: oklch(0.98 0.02 85);
-  --sidebar-accent: oklch(0.92 0.03 75);
-  --sidebar-accent-foreground: oklch(0.25 0.05 45);
-  --sidebar-border: oklch(0.85 0.04 70);
-  --sidebar-ring: oklch(0.55 0.15 25);
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  /* Updated primary color to use Circle Up! orange */
+  --primary: oklch(0.65 0.2 35);
+  --primary-foreground: oklch(1 0 0);
+  /* Updated secondary color to use Circle Up! teal */
+  --secondary: oklch(0.45 0.15 180);
+  --secondary-foreground: oklch(1 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  /* Updated accent color to use warm yellow */
+  --accent: oklch(0.8 0.15 80);
+  --accent-foreground: oklch(0.2 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+
+  /* Circle Up! Brand Colors */
+  --circle-orange: #ff6b35;
+  --circle-teal: #2d7d7d;
+  --circle-cream: #fef7f0;
+  --circle-dark: #2c1810;
 }
 
 .dark {
-  --background: oklch(0.15 0.03 45);
-  --foreground: oklch(0.95 0.02 85);
-  --card: oklch(0.18 0.03 45);
-  --card-foreground: oklch(0.95 0.02 85);
-  --popover: oklch(0.18 0.03 45);
-  --popover-foreground: oklch(0.95 0.02 85);
-  --primary: oklch(0.65 0.18 25);
-  --primary-foreground: oklch(0.15 0.03 45);
-  --secondary: oklch(0.55 0.15 180);
-  --secondary-foreground: oklch(0.95 0.02 85);
-  --muted: oklch(0.25 0.04 50);
-  --muted-foreground: oklch(0.65 0.05 75);
-  --accent: oklch(0.8 0.2 65);
-  --accent-foreground: oklch(0.15 0.03 45);
-  --destructive: oklch(0.7 0.22 15);
-  --destructive-foreground: oklch(0.95 0.02 85);
-  --border: oklch(0.3 0.05 50);
-  --input: oklch(0.22 0.04 50);
-  --ring: oklch(0.65 0.18 25);
-  --chart-1: oklch(0.65 0.18 25);
-  --chart-2: oklch(0.55 0.15 180);
-  --chart-3: oklch(0.8 0.2 65);
-  --chart-4: oklch(0.7 0.18 320);
-  --chart-5: oklch(0.75 0.16 120);
-  --sidebar: oklch(0.18 0.03 45);
-  --sidebar-foreground: oklch(0.95 0.02 85);
-  --sidebar-primary: oklch(0.65 0.18 25);
-  --sidebar-primary-foreground: oklch(0.15 0.03 45);
-  --sidebar-accent: oklch(0.25 0.04 50);
-  --sidebar-accent-foreground: oklch(0.95 0.02 85);
-  --sidebar-border: oklch(0.3 0.05 50);
-  --sidebar-ring: oklch(0.65 0.18 25);
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
 }
 
 @theme inline {
@@ -112,6 +121,14 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Adding Circle Up! brand colors to Tailwind theme */
+  --color-circle-orange: var(--circle-orange);
+  --color-circle-teal: var(--circle-teal);
+  --color-circle-cream: var(--circle-cream);
+  --color-circle-dark: var(--circle-dark);
+
+  /* Fixed font configuration to properly connect Google Fonts */
   --font-sans: var(--font-open-sans);
   --font-serif: var(--font-righteous);
 }
@@ -122,144 +139,92 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-open-sans);
   }
+}
 
-  /* Updated styling with organic shapes and retro effects */
+/* Circle Up! Custom Styles */
+@layer components {
   .groovy-bg {
-    background: linear-gradient(135deg, oklch(0.98 0.02 85) 0%, oklch(0.96 0.03 80) 50%, oklch(0.94 0.04 75) 100%);
+    background: linear-gradient(135deg, #fef7f0 0%, #fff5ee 50%, #fef7f0 100%);
+    min-height: 100vh;
   }
 
   .groovy-card {
-    background: oklch(0.96 0.03 80);
-    border: 2px solid oklch(0.85 0.04 70);
-    box-shadow: 8px 8px 0px oklch(0.55 0.15 25);
+    background: white;
+    border: 3px solid transparent;
+    background-image: linear-gradient(white, white), linear-gradient(45deg, #ff6b35, #2d7d7d);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    border-radius: 15px;
     transform: rotate(-1deg);
     transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.15);
+  }
+
+  .groovy-card:nth-child(even) {
+    transform: rotate(1deg);
   }
 
   .groovy-card:hover {
     transform: rotate(0deg) scale(1.02);
-    box-shadow: 12px 12px 0px oklch(0.45 0.12 180);
-  }
-
-  .groovy-button {
-    background: linear-gradient(45deg, oklch(0.55 0.15 25) 0%, oklch(0.65 0.18 35) 100%);
-    border: 3px solid oklch(0.75 0.18 65);
-    box-shadow: 4px 4px 0px oklch(0.25 0.05 45);
-    transform: rotate(-0.5deg);
-    transition: all 0.2s ease;
-  }
-
-  .groovy-button:hover {
-    transform: rotate(0deg) translateY(-2px);
-    box-shadow: 6px 6px 0px oklch(0.25 0.05 45);
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.25);
   }
 
   .groovy-text {
-    text-shadow: 3px 3px 0px oklch(0.75 0.18 65);
+    font-family: "Righteous", cursive;
+    background: linear-gradient(45deg, #ff6b35, #2d7d7d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
-  /* Adding smooth loading animations */
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  .groovy-button {
+    background: linear-gradient(45deg, #ff6b35, #ff8c42) !important;
+    color: white !important;
+    font-family: "Righteous", cursive;
+    border: none !important;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
   }
 
-  @keyframes fadeInScale {
-    from {
-      opacity: 0;
-      transform: scale(0.9);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
+  .groovy-button:hover {
+    background: linear-gradient(45deg, #2d7d7d, #3a9999) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(45, 125, 125, 0.4);
   }
+}
 
-  @keyframes slideInLeft {
-    from {
-      opacity: 0;
-      transform: translateX(-50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  @keyframes slideInRight {
-    from {
-      opacity: 0;
-      transform: translateX(50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  @keyframes bounceIn {
-    0% {
-      opacity: 0;
-      transform: scale(0.3);
-    }
-    50% {
-      transform: scale(1.05);
-    }
-    70% {
-      transform: scale(0.9);
-    }
-    100% {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-
-  @keyframes float {
-    0% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-    100% {
-      transform: translateY(0px);
-    }
-  }
-
-  /* Animation classes */
-  .animate-fade-in-up {
-    animation: fadeInUp 0.8s ease-out forwards;
-  }
-
-  .animate-fade-in-scale {
-    animation: fadeInScale 0.6s ease-out forwards;
-  }
-
-  .animate-slide-in-left {
-    animation: slideInLeft 0.8s ease-out forwards;
-  }
-
-  .animate-slide-in-right {
-    animation: slideInRight 0.8s ease-out forwards;
+/* Loading Animations - play once only */
+@layer utilities {
+  .animate-on-load {
+    opacity: 0;
   }
 
   .animate-bounce-in {
     animation: bounceIn 0.8s ease-out forwards;
   }
 
-  /* Changed float animation to play once with a gentle settle */
-  .animate-float {
-    animation: float 1.2s ease-out forwards;
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
   }
 
-  /* Staggered animation delays */
+  .animate-slide-in-left {
+    animation: slideInLeft 0.6s ease-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in-scale {
+    animation: fadeInScale 0.5s ease-out forwards;
+  }
+
   .animate-delay-100 {
     animation-delay: 0.1s;
   }
@@ -284,8 +249,76 @@
     animation-delay: 0.6s;
   }
 
-  /* Initial hidden state for animations */
-  .animate-on-load {
+  .animate-float {
+    animation: float 2s ease-in-out;
+  }
+}
+
+@keyframes bounceIn {
+  0% {
     opacity: 0;
+    transform: scale(0.3) translateY(-50px) rotate(-1deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1) translateY(0) rotate(-1deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0) rotate(-1deg);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
   }
 }

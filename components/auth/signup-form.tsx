@@ -10,7 +10,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Label } from "@/components/ui/label"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import Link from "next/link"
-import { Loader2, Heart } from "lucide-react"
+import { Loader2, Heart } from "@/lib/icons"
 
 export default function SignUpForm() {
   const [email, setEmail] = useState("")
