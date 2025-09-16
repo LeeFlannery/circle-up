@@ -25,7 +25,7 @@ export default async function HomePage() {
             Circle Up!
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed animate-on-load animate-fade-in-up animate-delay-200">
-            Secure church communication with complete privacy protection. Connect with your spiritual family while
+            Secure community communication with complete privacy protection. Connect with your group members while
             keeping your personal information safe and secure.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -71,7 +71,7 @@ export default async function HomePage() {
               </div>
               <CardTitle className="font-serif text-2xl">Member Directory</CardTitle>
               <CardDescription className="text-base">
-                Connect with church family through a secure directory with friend-based visibility.
+                Connect with community members through a secure directory with friend-based visibility.
               </CardDescription>
             </CardHeader>
           </Card>
@@ -101,7 +101,7 @@ export default async function HomePage() {
               </div>
               <CardTitle className="font-serif text-2xl">Shared Calendar</CardTitle>
               <CardDescription className="text-base">
-                Stay updated on church events and activities with our community calendar.
+                Stay updated on group events and activities with our community calendar.
               </CardDescription>
             </CardHeader>
           </Card>
@@ -131,7 +131,7 @@ export default async function HomePage() {
               </div>
               <CardTitle className="font-serif text-2xl">Beautiful Design</CardTitle>
               <CardDescription className="text-base">
-                Experience church communication with a fun, vibrant aesthetic that brings joy to connecting.
+                Experience community communication with a fun, vibrant aesthetic that brings joy to connecting.
               </CardDescription>
             </CardHeader>
           </Card>
@@ -143,7 +143,7 @@ export default async function HomePage() {
             <CardContent className="p-8">
               <h2 className="font-serif text-3xl font-bold text-primary mb-4">Ready to Circle Up?</h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Join your church community in a space that values both connection and privacy.
+                Join your community in a space that values both connection and privacy.
               </p>
               <Button asChild size="lg" className="groovy-button text-lg px-8 py-6">
                 <Link href="/auth/signup">Start Connecting Today</Link>
