@@ -18,19 +18,8 @@ import {
 } from "@/components/ui/dialog"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import {
-  Calendar,
-  Plus,
-  ChevronLeft,
-  ChevronRight,
-  Clock,
-  MapPin,
-  User,
-  Eye,
-  Users,
-  Settings,
-  Lock,
-} from "lucide-react"
+import { Calendar, Plus, ChevronLeft, ChevronRight, Clock, MapPin, User, Eye, Users, Settings, Lock } from 'lucide-react'
+import CalendarAgent from "./calendar-agent"
 
 interface CalendarEvent {
   id: string
@@ -67,6 +56,18 @@ export default function CalendarView({ currentUserId, userRole }: CalendarViewPr
     visibility: "public" as "public" | "friends" | "leaders" | "admin",
   })
   const supabase = createClient()
+
+  const handleAiEventParsed = (parsedEvent: any) => {
+    setNewEvent({
+      title: parsedEvent.title,
+      description: parsedEvent.description,
+      start_date: parsedEvent.startDate,
+      end_date: parsedEvent.endDate,
+      location: parsedEvent.location || "",
+      visibility: parsedEvent.isPublic ? "public" : "friends",
+    })
+    setShowCreateDialog(true)
+  }
 
   useEffect(() => {
     fetchEvents()
@@ -269,6 +270,8 @@ export default function CalendarView({ currentUserId, userRole }: CalendarViewPr
           <AlertDescription>{error}</AlertDescription>
         </Alert>
       )}
+
+      <CalendarAgent onEventParsed={handleAiEventParsed} />
 
       {/* Calendar Header */}
       <Card className="groovy-card">

@@ -18,8 +18,9 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { Label } from "@/components/ui/label"
-import { ArrowLeft, Mail, Users, Send, UserPlus, UserMinus, Settings } from "lucide-react"
+import { ArrowLeft, Mail, Users, Send, UserPlus, UserMinus, Settings } from 'lucide-react'
 import Link from "next/link"
+import EmailAgent from "./email-agent"
 
 interface MailingList {
   id: string
@@ -60,6 +61,10 @@ export default function MailingListDetail({ mailingList, currentUserId, userRole
   const [sendLoading, setSendLoading] = useState(false)
   const [message, setMessage] = useState({ subject: "", content: "" })
   const supabase = createClient()
+
+  const handleAiDraft = (subject: string, content: string) => {
+    setMessage({ subject, content })
+  }
 
   useEffect(() => {
     fetchMembers()
@@ -225,6 +230,12 @@ export default function MailingListDetail({ mailingList, currentUserId, userRole
                     <DialogDescription>Send an email to all {members.length} members of this list</DialogDescription>
                   </DialogHeader>
                   <div className="space-y-4">
+                    <div className="flex justify-end">
+                      <EmailAgent 
+                        onDraftGenerated={handleAiDraft} 
+                        audienceName={mailingList.name} 
+                      />
+                    </div>
                     <div className="space-y-2">
                       <Label htmlFor="subject">Subject</Label>
                       <Input

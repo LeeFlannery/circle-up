@@ -4,11 +4,12 @@ import type React from "react"
 
 import { useState } from "react"
 import { createClient } from "@/lib/supabase/client"
-import { useRouter } from "next/navigation"
+import { useRouter } from 'next/navigation'
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import Link from "next/link"
-import { Users, Calendar, MessageCircle, Mail, Heart, Settings, LogOut, Menu, X, Home, Sparkles } from "lucide-react"
+import { Users, Calendar, MessageCircle, Mail, Heart, Settings, LogOut, Menu, X, Home, Sparkles } from 'lucide-react'
+import CoordinatorChat from "./coordinator-chat"
 
 interface DashboardLayoutProps {
   children: React.ReactNode
@@ -118,6 +119,9 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
         {/* Page content */}
         <main className="p-6">{children}</main>
       </div>
+      
+      {/* AI Coordinator Chat Widget */}
+      <CoordinatorChat />
     </div>
   )
 }
